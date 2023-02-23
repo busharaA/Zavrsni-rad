@@ -23,11 +23,11 @@ class App extends Component {
         }
     }
 
-    constructor() {
-        super();
-        this.drone = new window.Scaledrone("3Srko3xJdUWd657i", {
-            data: this.state.member
-        });
+    drone = new window.Scaledrone("3Srko3xJdUWd657i", {
+        data: this.state.member
+    });
+
+    componentDidMount = () => {
         this.drone.on('open', error => {
             if (error) {
                 return console.error(error);
